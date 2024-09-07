@@ -1,0 +1,12 @@
+;; KANTA configuration
+
+(defsrc caps )
+
+(defalias 
+  escctrl (tap-hold-release 200 200 esc lctrl)
+)
+
+(deflayer base
+  @escctrl  
+)
+

@@ -1,12 +1,32 @@
 ;; KANTA configuration
 
-(defsrc caps )
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
 
 (defalias 
   escctrl (tap-hold-release 200 200 esc lctrl)
+numbers (tap-hold-release 300 300 z (layer-while-held num))
 )
 
+
 (deflayer base
-  @escctrl  
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @escctrl a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft @numbers    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(deflayer num
+  _  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _  _    _    _    _    _    _    _    tab    home    _    _    _    _
+  _  _    _    _    _    _    left    down   up  right   _    _    _
+  _  _    _    _    _    _    S-tab    end    _    _    _    _
+  _    _    _              _              _    _    _   
 )
 
